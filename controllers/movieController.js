@@ -50,7 +50,10 @@ function show(req, res) {
 
       movie.reviews = reviewResults;
 
-      res.json(movie);
+      res.json({
+        ...movie,
+        image: req.imagePath + movie.image,
+      });
     });
   });
 }
